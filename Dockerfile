@@ -12,3 +12,4 @@ RUN cd canu-1.3/src && make -j8
 
 ENV PATH=/canu-1.3/bin:${PATH}
 
+VOLUME /data

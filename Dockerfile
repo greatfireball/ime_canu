@@ -1,8 +1,18 @@
 ARG osversion=8
 FROM java:${osversion}
 
-LABEL maintainer="frank.foerster@ime.fraunhofer.de"
-LABEL description="Dockerfile providing the canu assembler for long reads"
+ARG VERSION=master
+ARG VCS_REF
+ARG BUILD_DATE
+
+RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
+
+LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
+      description="Dockerfile providing the canu assembler for long reads" \
+      version=${VERSION} \
+      org.label-schema.vcs-ref=${VCS_REF} \
+      org.label-schema.build-date=${BUILD_DATE} \
+      org.label-schema.vcs-url="https://github.com/greatfireball/ime_canu.git"
 
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install build-essential wget gnuplot

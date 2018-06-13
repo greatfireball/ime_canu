@@ -1,5 +1,5 @@
 ARG osversion=8
-FROM java:${osversion}
+FROM openjdk:${osversion}
 
 ARG VERSION=master
 ARG VCS_REF

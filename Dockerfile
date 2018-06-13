@@ -28,4 +28,5 @@ RUN cd canu-1.6/src && make -j8
 
 ENV PATH=/canu-1.6/bin:${PATH}
 
+WORKDIR /data
 VOLUME /data

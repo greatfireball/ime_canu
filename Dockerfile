@@ -1,4 +1,5 @@
-FROM java:8
+ARG osversion=8
+FROM java:${osversion}
 
 LABEL maintainer="frank.foerster@ime.fraunhofer.de"
 LABEL description="Dockerfile providing the canu assembler for long reads"

@@ -15,7 +15,7 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.vcs-url="https://github.com/greatfireball/ime_canu.git"
 
 RUN apt-get update && \
-    apt-get --yes install
+    apt-get --yes install \
        build-essential \
        wget \
        gnuplot && \

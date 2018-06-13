@@ -14,8 +14,13 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/greatfireball/ime_canu.git"
 
-RUN apt-get update && apt-get -y upgrade
-RUN apt-get -y install build-essential wget gnuplot
+RUN apt-get update && \
+    apt-get --yes install
+       build-essential \
+       wget \
+       gnuplot && \
+    apt autoclean && \
+    rm -rf /var/lib/apt/lists/* /var/log/dpkg.log
 
 RUN wget https://github.com/marbl/canu/archive/v1.6.tar.gz
 RUN tar -xzf v1.6.tar.gz && rm v1.6.tar.gz

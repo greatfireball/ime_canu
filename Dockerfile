@@ -22,11 +22,13 @@ RUN apt-get update && \
     apt autoclean && \
     rm -rf /var/lib/apt/lists/* /var/log/dpkg.log
 
-RUN wget https://github.com/marbl/canu/archive/v1.6.tar.gz
-RUN tar -xzf v1.6.tar.gz && rm v1.6.tar.gz
-RUN cd canu-1.6/src && make -j8
+WORKDIR /opt
+RUN wget -O - https://github.com/marbl/canu/archive/v1.6.tar.gz | \
+    tar -xzf - && \
+    cd canu-1.6/src && \
+    make -j8
 
-ENV PATH=/canu-1.6/bin:${PATH}
+ENV PATH=/opt/canu-1.6/bin:${PATH}
 
 WORKDIR /data
 VOLUME /data

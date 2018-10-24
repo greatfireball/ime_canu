@@ -30,5 +30,5 @@ RUN wget -O - https://github.com/marbl/canu/archive/v1.6.tar.gz | \
 
 ENV PATH=/opt/canu-1.6/Linux-amd64/bin:${PATH}
 
-WORKDIR /data
 VOLUME /data
+WORKDIR /data

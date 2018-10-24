@@ -28,7 +28,7 @@ RUN wget -O - https://github.com/marbl/canu/archive/v1.6.tar.gz | \
     cd canu-1.6/src && \
     make -j8
 
-ENV PATH=/opt/canu-1.6/bin:${PATH}
+ENV PATH=/opt/canu-1.6/Linux-amd64/bin:${PATH}
 
 WORKDIR /data
 VOLUME /data

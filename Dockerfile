@@ -32,3 +32,6 @@ ENV PATH=/opt/canu-1.6/Linux-amd64/bin:${PATH}
 
 VOLUME /data
 WORKDIR /data
+
+ENTRYPOINT ["canu"]
+CMD ["--help"]

@@ -23,12 +23,12 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /var/log/dpkg.log
 
 WORKDIR /opt
-RUN wget -O - https://github.com/marbl/canu/archive/v1.6.tar.gz | \
+RUN wget -O - https://github.com/marbl/canu/archive/v1.8.tar.gz | \
     tar -xzf - && \
-    cd canu-1.6/src && \
+    cd canu-1.8/src && \
     make -j8
 
-ENV PATH=/opt/canu-1.6/Linux-amd64/bin:${PATH}
+ENV PATH=/opt/canu-1.8/Linux-amd64/bin:${PATH}
 
 VOLUME /data
 WORKDIR /data
